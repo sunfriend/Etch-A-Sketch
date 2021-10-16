@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.squares-container {
+    width: 18rem;
+    height: 18rem;
+    border: 3px solid gray;
+    margin: 1rem auto;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2px;
+}
+    
+
+.square-block {
+    background-color: cadetblue;
+    width: 100%;
+    height: 100%;
+}
+
+.color-change {
+    background-color:chartreuse;
+}
+
+#display-area {
+    border: none;
+    out
+}
