@@ -1,11 +1,13 @@
 const bodyContainer = document.querySelector("body");
 const buttonsArray = document.querySelectorAll("button");
+const buttonCommet = document.querySelector("#commet-button");
 const areaSizeInfo = document.querySelector("#area-size_info");
 const squaresContainer = document.createElement("div");
 squaresContainer.classList.add("squares-container");
 bodyContainer.appendChild(squaresContainer);
 let sketchAreaSize = 2;
 let numberOfSquares = 4;
+let booleanSwitch = false;
 const colorsArray = ["black", "red", "orange", "yellow", "azure", "purple", "green", "blue", "indigo", "violet"];
 areaSizeInfo.textContent = `${sketchAreaSize}x${sketchAreaSize}`;
 
@@ -43,7 +45,9 @@ function randomColorGenerator() {
 function hoveringSquares(event) {
     if(event.target.id) {
         event.target.classList.add("color-change");
-        /* setTimeout(() => event.target.classList.remove("color-change"), 500, false); */
+        if(booleanSwitch) {
+            setTimeout(() => event.target.classList.remove("color-change"), 500, false);
+        }
         console.log(event.target.id);
     }
 }
@@ -58,6 +62,15 @@ function increaseDecreaseArea(event) {
     }
     if (event.target.id === "decrease-button") {
         sketchAreaSize--; 
+    }
+    if (event.target.id === "commet-button") {
+        booleanSwitch = !booleanSwitch;
+        if (booleanSwitch) {
+            buttonCommet.classList.add("switch-on");
+        }
+        else {
+            buttonCommet.classList.remove("switch-on");
+        }
     }
     clearSquares(squaresContainer);
     createSquares(Math.pow(sketchAreaSize, 2));
