@@ -6,6 +6,7 @@ squaresContainer.classList.add("squares-container");
 bodyContainer.appendChild(squaresContainer);
 let sketchAreaSize = 2;
 let numberOfSquares = 4;
+const colorsArray = ["black", "red", "orange", "yellow", "azure", "purple", "green", "blue", "indigo", "violet"];
 areaSizeInfo.textContent = `${sketchAreaSize}x${sketchAreaSize}`;
 
 window.onload = () => createSquares(numberOfSquares);
@@ -25,9 +26,19 @@ function clearSquares(parentContainer) {
     }
 }
 
+squaresContainer.addEventListener("click", function(e) {
+    if(e.target.id) {
+        e.target.style.backgroundColor = randomColorGenerator();
+    }
+});
+
 squaresContainer.addEventListener("mouseover", function(e) { 
 hoveringSquares(e);
 });
+
+function randomColorGenerator() {
+    return colorsArray[Math.floor(Math.random() * colorsArray.length)];
+}
 
 function hoveringSquares(event) {
     if(event.target.id) {
@@ -43,8 +54,7 @@ increaseDecreaseArea(e);
 
 function increaseDecreaseArea(event) {
     if (event.target.id === "increase-button") {
-        sketchAreaSize++;
-        
+        sketchAreaSize++;      
     }
     if (event.target.id === "decrease-button") {
         sketchAreaSize--; 
