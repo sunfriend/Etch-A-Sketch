@@ -13,19 +13,24 @@ body {
     justify-content: center;
     align-items: center;
     background-color:rgb(181, 202, 241);
+    font-size: 1.4rem;
+}
+
+button {
+    font-size: 1.4rem;
 }
 
 #decrease-button, #increase-button {
     border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
+    width: 4rem;
+    height: 4rem;
     border: none;
 }
 
 #clear-button, #commet-button {
     border: none;
-    height : 2rem;
-    width: 8rem;
+    height : 3rem;
+    width: 12.5rem;
     border-radius: 50%;
 }
 
@@ -42,8 +47,8 @@ button:hover {
 }
 
 .squares-container {
-    width: 18rem;
-    height: 18rem;
+    width: 30rem;
+    height: 30rem;
     border: 3px solid gray;
     margin: 1rem auto;
     display: grid;
